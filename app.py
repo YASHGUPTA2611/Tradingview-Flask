@@ -13,6 +13,6 @@ def webhook():
 
     data = json.loads(request.data)
     
-    print(data['ticker'])
-    print(data['exchange'])
+    return data['ticker']
+    return data['exchange']
    
