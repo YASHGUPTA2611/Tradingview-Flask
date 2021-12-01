@@ -10,8 +10,7 @@ def hello_world():
 
 @app.route('/webhooks',  methods=['POST'])
 def webhook():
-    
-    print("HERE WE WILL GET PARAMS OF THE ALERT FROM TRADINGVIEW")
-    data = json.loads(request.data)
-    return data['ticker']
-    print(data['bar'])
+    if request.method=='POST':
+        data = parse_webhook(request.get_data(as_text=True))
+        Print("Alert Received")
+           
