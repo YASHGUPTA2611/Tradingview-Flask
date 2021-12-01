@@ -1,22 +1,18 @@
-from action import parse_webhook
-from flask import Flask, request, abort
+import json
+from flask import Flask, request
 
-# Create Flask object called app.
 app = Flask(__name__)
 
-
-# Create root to easily let us know its on/working.
 @app.route('/')
-def root():
-    return 'online'
+def welcome():
+    return "<h1>This is my first trading bot</h1>"
 
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    if request.method == 'POST':
-        # Parse the string data from tradingview into a python dict
-        data = parse_webhook(request.get_data(as_text=True))
-        
-if __name__ == '__main__':
-    app.run()
-           
+
+    data = json.loads(request.data)
+    
+    print(data['ticker'])
+    print(['exchange'])
+    return data
