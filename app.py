@@ -1,5 +1,6 @@
+import json
+from flask import Flask, request
 
-from flask import Flask, request,abort
 
 app = Flask(__name__)
 
@@ -7,12 +8,8 @@ app = Flask(__name__)
 def hello_world():
     return 'hello world'
 
-@app.route('/webhooks', methods = ['POST'])
-def webhook():
-    if request.method == 'POST':
-        print(request.json)
-
-
-
-
-
+@app.route('/webhooks')
+def info():
+    
+    data = json.loads(request.data)
+    print(data)
