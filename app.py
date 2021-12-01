@@ -1,5 +1,4 @@
-import actions
-from actions import parse_webhook
+from action import parse_webhook
 from flask import Flask, request, abort
 
 # Create Flask object called app.
