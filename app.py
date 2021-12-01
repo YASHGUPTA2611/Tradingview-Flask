@@ -8,8 +8,9 @@ app = Flask(__name__)
 def hello_world():
     return 'hello world'
 
-@app.route('/webhooks')
+@app.route('/webhooks',  methods=['POST'])
 def info():
     
     data = json.loads(request.data)
-    print(data)
+    print(data['ticker'])
+    print(data['bar'])
