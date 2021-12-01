@@ -16,10 +16,6 @@ def webhook():
         abort(400)
 
 
-if __name__ == '__main__':
-    app.run()
-
-
 
 
 
