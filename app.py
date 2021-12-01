@@ -1,5 +1,4 @@
 import json
-from action import *
 from flask import Flask, request
 
 
@@ -14,5 +13,5 @@ def webhook():
     
     print("HERE WE WILL GET PARAMS OF THE ALERT FROM TRADINGVIEW")
     data = json.loads(request.data)
-    print(data['ticker'])
+    return data['ticker']
     print(data['bar'])
