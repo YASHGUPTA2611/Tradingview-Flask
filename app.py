@@ -1,4 +1,4 @@
-import json
+import actions
 from actions import parse_webhook
 from flask import Flask, request, abort
 
