@@ -1,1 +1,1 @@
-# Tradingview-Flask-Binance
+# Tradingview-Flask
