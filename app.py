@@ -14,5 +14,5 @@ def webhook():
     data = json.loads(request.data)
     
     print(data['ticker'])
-    print(['exchange'])
-    return data
+    print(data['exchange'])
+   
