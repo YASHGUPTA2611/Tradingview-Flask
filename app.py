@@ -10,6 +10,8 @@ def welcome():
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     webhook_message = jsonify(request.json)
+    
+    return webhook_message
    
     return 'Success'
     
