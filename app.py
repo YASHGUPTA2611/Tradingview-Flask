@@ -1,6 +1,6 @@
 import json
 import request
-from flask import Flask, request, abort
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -13,9 +13,9 @@ def welcome():
 def webhook():
     if request.method == 'POST':
         print(request.json)
-        return 'success', 200
+        return 'success'
     else:
-        abort(400)
+        return 'Failed'
 
 if __name__ == '__main__':
     app.run()
