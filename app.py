@@ -8,14 +8,13 @@ app = Flask(__name__)
 def welcome():
     return "<h1>This is my first trading bot</h1>"
 
-
-@app.route('/webhook', methods=['GET', 'POST'])
+@app.route('/webhook', methods=['POST'])
 def webhook():
     if request.method == 'POST':
         print(request.json)
-        return 'success'
+        return 'success', 200
     else:
-        return 'Failed'
+        abort(400)
 
 if __name__ == '__main__':
     app.run()
