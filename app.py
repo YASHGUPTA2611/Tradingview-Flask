@@ -16,5 +16,5 @@ def webhook():
     return 'success', 200
 
 if __name__ == '__main__':
-    app.run(debug=TRUE)
+    app.run(debug=True)
    
