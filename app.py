@@ -1,5 +1,5 @@
 import json
-from flask import Flask, request
+from flask import Flask, request, abort
 
 app = Flask(__name__)
 
@@ -10,9 +10,12 @@ def welcome():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
+    if request.method == 'POST':
+        print(request.json)
+        return 'success', 200
+    else:
+        abort(400)
 
-    data = json.loads(request.data)
-    
-    return data['ticker']
-    return data['exchange']
+if __name__ == '__main__':
+    app.run()
    
