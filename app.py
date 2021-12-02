@@ -11,6 +11,8 @@ def welcome():
 def webhook():
     webhook_message = jsonify(request.json)
     
+    return webhook_message['ticker']
+    
     return 'success'
 
 if __name__ == '__main__':
