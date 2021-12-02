@@ -9,11 +9,8 @@ def welcome():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-    if request.method == 'POST':
-        print(request.json)
-        return 'success', 200
-    else:
-        abort(400)
+    print(request.json)
+    return 'success', 200
 
 if __name__ == '__main__':
     app.run()
