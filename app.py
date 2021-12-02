@@ -1,5 +1,5 @@
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -9,9 +9,8 @@ def welcome():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-    data = jsonify(request.json)
-    print(data['ticker'])
-    return 'success', 200
+    webhook_message = json.loads(request.data)
+    print(webhook_message['strategy']['order_price'])
 
 if __name__ == '__main__':
     app.run(debug=TRUE)
