@@ -9,7 +9,8 @@ def welcome():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-    return jsonify(request.json)
+    data = jsonify(request.json)
+    print(data['ticker'])
     return 'success', 200
 
 if __name__ == '__main__':
