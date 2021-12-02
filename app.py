@@ -10,9 +10,7 @@ def welcome():
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     webhook_message = jsonify(request.json)
-    
-    return webhook_message['ticker']
-    
+
     return 'success'
 
 if __name__ == '__main__':
