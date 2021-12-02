@@ -11,23 +11,9 @@ def welcome():
 def webhook():
     webhook_message = jsonify(request.json)
     
-    side = data['strategy']['order_action'].upper()
-    quantity = data['strategy']['order_contracts']
-    order_response = order(side, quantity, "DOGEUSD")
-
-    if order_response:
-        return {
-            "code": "success",
-            "message": "order executed"
-        }
-    else:
-        print("order failed")
-
-        return {
-            "code": "error",
-            "message": "order failed"
-        }
-
+    return 'Success'
+    
+    return webhook_message
 if __name__ == '__main__':
     app.run(debug=True)
    
