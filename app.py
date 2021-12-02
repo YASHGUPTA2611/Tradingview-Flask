@@ -10,7 +10,10 @@ def welcome():
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     webhook_message = json.loads(request.data)
-    print(webhook_message['strategy']['order_price'])
+    
+    return webhook_message['strategy']['order_price']
+    
+    return 'success', 200
 
 if __name__ == '__main__':
     app.run(debug=TRUE)
