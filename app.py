@@ -11,9 +11,11 @@ def welcome():
 def webhook():
     webhook_message = jsonify(request.json)
     
+    return webhook_message
+    
     return 'Success'
     
-    return webhook_message
+    
 if __name__ == '__main__':
     app.run(debug=True)
    
