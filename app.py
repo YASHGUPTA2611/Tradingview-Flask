@@ -1,5 +1,5 @@
 import json
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -9,9 +9,9 @@ def welcome():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-    print(request.json)
+    return jsonify(request.json)
     return 'success', 200
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=TRUE)
    
