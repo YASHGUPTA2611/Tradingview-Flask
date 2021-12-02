@@ -11,7 +11,7 @@ def welcome():
 def webhook():
     webhook_message = jsonify(request.json)
     
-    return webhook_message['strategy']['order_price']
+    print(webhook_message['strategy']['order_price'])
     
     return 'success'
 
